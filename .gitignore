@@ -1,0 +1,9 @@
+backend/server
+*.o
+*.out
+build/
+cmake-build-debug/
+node_modules/
+.DS_Store
+.idea/
+.zed/
