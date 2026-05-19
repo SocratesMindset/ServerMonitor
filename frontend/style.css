@@ -2,3 +2,8 @@ body {
     background-color: #f5f5dc;
     color: black;
 }
+header {
+    background-color: saddlebrown;
+    width: auto;
+    height: auto;
+}
