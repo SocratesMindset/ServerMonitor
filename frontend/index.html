@@ -7,14 +7,20 @@
         <script src="app.js" defer></script>
     </head>
     <body>
-        <header>Хидер</header>
-        <h1>Server Monitor</h1>
-        <div style="justify-content: center" id="cpu">CPU: загрузка...</div>
-        <div id="templb">Temp: Загрузка</div>
-        <div>
-            <button id="refresh">Обновить загрузку CPU</button>
-            <button id="temp">Обновить температуру</button>
-        </div>
-        <footer>Футер</footer>
+        <header><h1>Хидер</h1></header>
+        <main>
+            <h1 class="title">Server Monitor</h1>
+            <div class="stats">
+                <div class="stat">
+                    <h1 id="cpu">CPU: загрузка...</h1>
+                    <button id="refresh">Обновить загрузку CPU</button>
+                </div>
+                <div class="stat">
+                    <h1 id="templb">Temp: Загрузка</h1>
+                    <button id="temp">Обновить температуру</button>
+                </div>
+            </div>
+        </main>
+        <footer><h1>Футер</h1></footer>
     </body>
 </html>
