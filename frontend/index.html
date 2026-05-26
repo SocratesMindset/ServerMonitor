@@ -7,17 +7,40 @@
         <script src="app.js" defer></script>
     </head>
     <body>
-        <header><h1>Хидер</h1></header>
-        <main>
+        <header>
             <h1 class="title">Server Monitor</h1>
-            <div class="stats">
-                <div class="stat">
-                    <h1 id="cpu">CPU: загрузка...</h1>
-                    <button id="refresh">Обновить загрузку CPU</button>
+            <h1>Хидер</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="stats">
+                    <div class="stat">
+                        <h1 id="cpu">CPU: загрузка...</h1>
+                        <button id="refresh">Обновить загрузку CPU</button>
+                    </div>
+                    <div class="stat">
+                        <h1 id="templb">Temp: Загрузка</h1>
+                        <button id="temp">Обновить температуру</button>
+                    </div>
+                    <div class="stat">
+                        <h1 id="payload">Load: Загрузка</h1>
+                        <button id="load">Обновить нагрузку</button>
+                    </div>
+                    <div class="stat">
+                        <h1 id="cpu">CPU: загрузка...</h1>
+                        <button id="refresh">Обновить загрузку CPU</button>
+                    </div>
+                    <div class="stat">
+                        <h1 id="templb">Temp: Загрузка</h1>
+                        <button id="temp">Обновить температуру</button>
+                    </div>
+                    <div class="stat">
+                        <h1 id="payload">Load: Загрузка</h1>
+                        <button id="load">Обновить нагрузку</button>
+                    </div>
                 </div>
-                <div class="stat">
-                    <h1 id="templb">Temp: Загрузка</h1>
-                    <button id="temp">Обновить температуру</button>
+                <div class="terminal">
+                    <h1>terminal</h1>
                 </div>
             </div>
         </main>
