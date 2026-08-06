@@ -1,5 +1,6 @@
 #define CROW_MAIN
 #include "crow_all.h"
+#include "getSensor.cpp"
 
 int main() {
     crow::SimpleApp app;
