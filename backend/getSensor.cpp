@@ -9,6 +9,10 @@ int getSensor(){
     for (const directory_entry& currentFile : monFolder)
     {
         std::string filename=currentFile.path().filename().string();
+        directory_iterator curMonFolder("/sys/class/hwmon/"+filename+"/");//полный бред, сюда проще передать currentFile.path()
+            for (const directory_entry& currentMonFile : curMonFolder)
+            {
 
+            }
     }
 }
