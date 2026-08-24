@@ -1,23 +1,31 @@
+#include <vector>
 #include <iostream>
 #include <filesystem>
 #include <regex>
+#include <fstream>
+#include <string>
 
-struct hardwareInfo//todo
+struct hardwareInfo
 {
-    // chip:
-    // value:
-    // label:
-    // chennel:
+    std::string driverName;
+    std::string chip;
+    int channel;
+    std::string value;
+    std::string type;
 };
 
-int getSensor(){
+std::vector<hardwareInfo> getSensor(){
+    std::vector<hardwareInfo> avalanche = {};
     std::cout<<"is gone";
     using namespace std::filesystem;
     directory_iterator monFolder("/sys/class/hwmon/");
     std::regex pattern(R"(temp([0-9]+)_(input|label))");
-    //ссылка будет использоваться тк без нее будет происходить постоянная аллокация на каждой итерации
     for (const directory_entry& currentFile : monFolder)
     {
+        std::filesystem::path driverFile=currentFile.path()/"name";
+        std::ifstream driver(driverFile);
+        std::string dname;
+        std::getline(driver,dname);
         std::string filename=currentFile.path().filename().string();
         directory_iterator curMonFolder(currentFile.path());
             for (const directory_entry& currentMonFile : curMonFolder)
@@ -27,8 +35,13 @@ int getSensor(){
                 if(std::regex_match(filenameMon,match,pattern))
                     {
                         std::string matched=match[1].str();
+                        std::ifstream sensor(currentMonFile.path());
+                        std::string content;
+                        std::getline(sensor,content);
+                        hardwareInfo temp = {dname,filename,std::stoi(match[1].str()),content,match[2].str()};
+                        avalanche.push_back(temp);
                     }
             }
     }
-    return 0;
+    return avalanche;
 }
