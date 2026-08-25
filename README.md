@@ -11,3 +11,6 @@ g++ -std=c++17 main.cpp -lpthread -o server
 #StartFrontend
 cd frontend
 npm start
+
+#c-lint formating (only in "backend" folder)
+clang-format -i file.cpp
