@@ -1,6 +1,7 @@
 #define CROW_MAIN
 #include "crow_all.h"
 #include "getCPULoad.cpp"
+#include "getRAMStat.cpp"
 #include "getSensor.cpp"
 
 int main() {
@@ -15,6 +16,21 @@ int main() {
     json_response["load5"] = load[1];
     json_response["load15"] = load[2];
     json_response["cores"] = load[3];
+    res.body = json_response.dump();
+    res.add_header("Access-Control-Allow-Origin", "*");
+    res.add_header("Content-Type", "application/json");
+    return res;
+  });
+  CROW_ROUTE(app, "/api/memory")
+  ([]() {
+    crow::response res;
+    crow::json::wvalue json_response;
+    std::vector<Mem> memory = getRAMStat();
+    for (int i = 0; i < memory.size(); i++) {
+      json_response[i]["key"] = memory[i].key;
+      json_response[i]["value"] = memory[i].value;
+      json_response[i]["unit"] = memory[i].unit;
+    }
     res.body = json_response.dump();
     res.add_header("Access-Control-Allow-Origin", "*");
     res.add_header("Content-Type", "application/json");
