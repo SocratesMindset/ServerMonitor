@@ -3,6 +3,7 @@
 #include "getCPULoad.cpp"
 #include "getRAMStat.cpp"
 #include "getSensor.cpp"
+#include "getMemoryStat.cpp"
 
 int main() {
   crow::SimpleApp app;
