@@ -3,11 +3,24 @@
 #include "getCPULoad.cpp"
 #include "getRAMStat.cpp"
 #include "getSensor.cpp"
-#include "getMemoryStat.cpp"
+#include "getStorageStat.cpp"
 
 int main() {
   crow::SimpleApp app;
 
+  CROW_ROUTE(app, "/api/storage")
+  ([]() {
+    crow::response res;
+    crow::json::wvalue json_response;
+    Storage strg = getStorageStat();
+    json_response["total"] = strg.total;
+    json_response["free"] = strg.free;
+    json_response["used"] = strg.used;
+    res.body = json_response.dump();
+    res.add_header("Access-Control-Allow-Origin", "*");
+    res.add_header("Content-Type", "application/json");
+    return res;
+  });
   CROW_ROUTE(app, "/api/payload")
   ([]() {
     crow::response res;
