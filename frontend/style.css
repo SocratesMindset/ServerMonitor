@@ -33,7 +33,7 @@ footer {
 }
 .stats {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 100px;
     width: fit-content;
     margin: 0 auto;
@@ -50,7 +50,7 @@ footer {
     border: 3px solid #379683;
     border-radius: 10px;
 }
-.terminal {
+.graph {
     width: 100%;
     border: 3px solid #379683;
     height: 200px;
