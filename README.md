@@ -15,3 +15,6 @@ npm start
 
 #c-lint formating (only in "backend" folder)
 clang-format -i file.cpp
+
+#npx formating (only in "frontend" folder)
+npx prettier --write file.js
