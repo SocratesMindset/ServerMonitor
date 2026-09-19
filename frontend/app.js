@@ -1,10 +1,9 @@
 // app.js
-import {getSensors} from "./getSensors.js";
-import {backendAPI} from "./config.js"
+import { loadSensors } from "./getSensors.js";
 
-async function loadSensors() {
-  const payload = await getSensors();
-  
+async function Sensors() {
+  const payload = await loadSensors();
+
 }
 
-document.getElementById("temp").addEventListener("click", loadSensors);
+document.getElementById("temp").addEventListener("click", Sensors);

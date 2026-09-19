@@ -32,12 +32,16 @@ function groupSensors(data) {
   return resp;
 }
 
-async function loadSensors() {
-  const response = fetch(backendAPI + "/sensor")
-    .then((r) => r.json())
-    .then((data) => {
-      console.log(groupSensors(data));
-    });
-}
+// export async function loadSensors() {
+//    return fetch(backendAPI + "/sensor")
+//     .then((r) => r.json())
+//     .then((data) => {
+//       return groupSensors(data);
+//     });
+// } полюбуйтесь как лаконично выглядит цепочка then
 
-loadSensors();
+export async function loadSensors() {
+  let req = await fetch(backendAPI + "/sensor");
+  req = await req.json();
+  return groupSensors(req);
+}
