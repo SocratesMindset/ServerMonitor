@@ -1,42 +1,45 @@
 <!-- index.html -->
 <!doctype html>
 <html>
-    <head>
-        <title>Server Monitor</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="app.js" type="module" defer></script>
-    </head>
-    <body>
-        <header>
-            <h1 class="title">Server Monitor</h1>
-            <h1>тут будет Хидер</h1>
-            <a href="pages/sensors.html">Сенсоры</a>
-        </header>
-        <main>
-            <div class="container">
-                <div class="stats">
-                    <div class="stat">
-                        <h1 id="tempLabel">Temp: Загрузка...</h1>
-                        <button id="temp">Обновить температуру</button>
-                    </div>
-                    <div class="stat">
-                        <h1 id="payload">Load: Загрузка...</h1>
-                        <button id="load">Обновить нагрузку</button>
-                    </div>
-                    <div class="stat">
-                        <h1 id="memory">Mem: загрузка...</h1>
-                        <button id="refresh">Обновить RAM</button>
-                    </div>
-                    <div class="stat">
-                        <h1 id="storage">Storage: Загрузка...</h1>
-                        <button id="temp">Обновить хранилище</button>
-                    </div>
-                </div>
-                <div class="graph">
-                    <h1>graph</h1>
-                </div>
+  <head>
+    <title>Server Monitor</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="app.js" type="module" defer></script> -->
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Server Monitor</h1>
+      <h1>SocratesMindset</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="stats">
+          <a href="pages/sensors.html">
+            <div class="stat">
+              <h1 class="cardStat">Датчики</h1>
             </div>
-        </main>
-        <footer><h1>тут будет Футер</h1></footer>
-    </body>
+          </a>
+          <a href="pages/payload.html">
+            <div class="stat">
+              <h1 id="payload">Нагрузка</h1>
+            </div>
+          </a>
+          <a href="pages/memory.html">
+            <div class="stat">
+              <h1 id="memory">Память</h1>
+            </div>
+          </a>
+          <a href="pages/storage.html">
+            <div class="stat">
+              <h1 id="storage">Хранилище</h1>
+            </div>
+          </a>
+        </div>
+        <div class="graph">
+          <h1>graph</h1>
+        </div>
+      </div>
+    </main>
+    <footer><h1 class="footerTitle">artur251373@gmail.com</h1></footer>
+  </body>
 </html>
