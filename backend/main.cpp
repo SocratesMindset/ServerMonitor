@@ -1,9 +1,9 @@
 #define CROW_MAIN
 #include "crow_all.h"
-#include "getCPULoad.cpp"
-#include "getRAMStat.cpp"
-#include "getSensor.cpp"
-#include "getStorageStat.cpp"
+#include "getters/getCPULoad.cpp"
+#include "getters/getRAMStat.cpp"
+#include "getters/getSensor.cpp"
+#include "getters/getStorageStat.cpp"
 
 int main() {
   crow::SimpleApp app;
