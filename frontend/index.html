@@ -5,41 +5,63 @@
     <title>Server Monitor</title>
     <link rel="stylesheet" href="style.css" />
     <!-- <script src="app.js" type="module" defer></script> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <header>
-      <h1 class="title">Server Monitor</h1>
-      <h1>SocratesMindset</h1>
+      <a href="index.html"><h1 class="title">Server Monitor</h1></a>
+      <h3 class="navbarElem">Войти</h1>
     </header>
-    <main>
-      <div class="container">
-        <div class="stats">
-          <a href="pages/sensors.html">
-            <div class="stat">
-              <h1 class="cardStat">Датчики</h1>
-            </div>
-          </a>
-          <a href="pages/payload.html">
-            <div class="stat">
-              <h1 id="payload">Нагрузка</h1>
-            </div>
-          </a>
-          <a href="pages/memory.html">
-            <div class="stat">
-              <h1 id="memory">Память</h1>
-            </div>
-          </a>
-          <a href="pages/storage.html">
-            <div class="stat">
-              <h1 id="storage">Хранилище</h1>
-            </div>
-          </a>
+    <div class="layout">
+      <main>
+        <div class="container">
+          <div class="stats">
+            <a href="pages/sensors.html">
+              <div class="stat">
+                <h3 class="cardStat">Датчики</h1>
+              </div>
+            </a>
+            <a href="pages/payload.html">
+              <div class="stat">
+                <h3 class="cardStat">Нагрузка</h1>
+              </div>
+            </a>
+            <a href="pages/memory.html">
+              <div class="stat">
+                <h3 class="cardStat">Память</h1>
+              </div>
+            </a>
+            <a href="pages/storage.html">
+              <div class="stat">
+                <h3 class="cardStat">Хранилище</h1>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="graph">
-          <h1>graph</h1>
+      </main>
+      <aside>
+        <div class="asideMan">
+          <p>
+            Чтобы начать использование программы войдите в свой аккаунт с
+            помощью 'войти', затем выберите одно из 4 направлений для просмотра:
+          </p>
+          <ul>
+            <li>Датчики - анализ температуры бортовых устройств</li>
+            <li>Нагрузка - анализ загруженности ЦПУ</li>
+            <li>Память - анализ потребления оперативной памяти</li>
+            <li>Хранилище - анализ дискового пространства</li>
+          </ul>
         </div>
-      </div>
-    </main>
-    <footer><h1 class="footerTitle">artur251373@gmail.com</h1></footer>
+      </aside>
+    </div>
+    <footer>
+      <a href="mailto:artur251373@gmail.com"
+        ><h3 class="footerTitle">artur251373@gmail.com</h3></a
+      >
+      <a href="https://github.com/SocratesMindset"
+        ><h3 class="footerTitle">SocratesMindset</h3></a
+      >
+    </footer>
   </body>
 </html>
