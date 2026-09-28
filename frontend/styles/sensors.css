@@ -26,13 +26,13 @@ header {
 }
 footer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background: radial-gradient(circle,rgba(5, 56, 107, 1) 0%, rgba(87, 108, 199, 1) 100%, rgba(237, 221, 83, 1) 100%);
     color: #edf5e1;
     width: 100%;
     height: 100px;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: start;
 }
 a{
     color: #edf5e1;
@@ -58,6 +58,10 @@ aside{
     margin: 10px;
     display: flex;
     justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.title:hover{
+    transform: translateY(-5px); 
 }
 .stat {
     background: linear-gradient(90deg,rgba(87, 199, 133, 1) 0%, rgba(87, 188, 199, 1) 100%);
@@ -68,6 +72,19 @@ aside{
     width:400px;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.navbarElem{
+    font-size: 36px;
+    margin: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.navbarElem:hover{
+    transform: translateY(-5px);
 }
 .graph {
     width: 100%;
@@ -85,11 +102,16 @@ aside{
     display:flex;
     justify-content: center;
     align-items: center;
+    font-size: 40px;
 }
 .footerTitle{
-    padding:10px;
+    margin: 10px;
     display: flex;
     justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.footerTitle:hover{
+    transform: translateY(+3px);
 }
 .asideMan{
     background: radial-gradient(circle,rgba(5, 56, 107, 1) 0%, rgba(87, 108, 199, 1) 100%, rgba(237, 221, 83, 1) 100%);
@@ -97,6 +119,14 @@ aside{
     border: 3px solid #379683;
     border-radius: 10px;
     display:flex;
-    width:200px;
+    width:250px;
+    flex-direction: column;
+    overflow-y: auto;
 
+}
+.asideMan p,ul{
+    font-size: x-large; margin: 5px
+}
+.stat h1{
+    font-size:36px;
 }
