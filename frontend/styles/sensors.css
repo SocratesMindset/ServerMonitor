@@ -49,8 +49,8 @@ aside{
 }
 .stats {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
     width: fit-content;
 }
 .title {
@@ -69,7 +69,7 @@ aside{
     border: 3px solid #379683;
     border-radius: 10px;
     display:flex;
-    width:400px;
+    width:250px;
     justify-content: center;
     align-items: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
