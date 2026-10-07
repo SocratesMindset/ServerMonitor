@@ -6,13 +6,15 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 main {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    overflow-y: auto;
 }
 header {
     display: flex;
@@ -46,12 +48,16 @@ aside{
   display: flex;
   flex-direction: row;
   flex: 1;
+  min-height: 0;
 }
 .stats {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
     width: fit-content;
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
 }
 .title {
     font-size: 54px;
@@ -68,11 +74,14 @@ aside{
     height: 250px;
     border: 3px solid #379683;
     border-radius: 10px;
-    display:flex;
     width:250px;
-    justify-content: center;
-    align-items: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;   /* Элементы пойдут строго с новой строки */
+    justify-content: center;  /* Центрирует блок текста по вертикали */
+    align-items: flex-start;  /* Выравнивает текст по левому краю внутри карточки */
+    padding: 15px;            /* Внутренний отступ, чтобы текст не прилипал к краям */
+    box-sizing: border-box; 
 }
 .stat:hover {
   transform: translateY(-5px);
@@ -93,16 +102,14 @@ aside{
 }
 .container {
     width: fit-content;
-    margin: 20px auto;
     display: flex;
     flex-direction: column;
     gap: 100px;
 }
 .cardStat{
     display:flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
+    font-size: 20px;
+    margin:0px;
 }
 .footerTitle{
     margin: 10px;
@@ -119,7 +126,7 @@ aside{
     border: 3px solid #379683;
     border-radius: 10px;
     display:flex;
-    width:250px;
+    width:400px;
     flex-direction: column;
     overflow-y: auto;
 
@@ -129,4 +136,18 @@ aside{
 }
 .stat h1{
     font-size:36px;
+}
+.asideMan { 
+  scrollbar-color: #379683 transparent; 
+  scrollbar-width: thin;
+}
+.asideMan::-webkit-scrollbar { /* Для браузеров разных */
+  width: 10px;
+}
+.asideMan::-webkit-scrollbar-track { /* Для браузеров разных */
+  background: transparent;
+}
+.asideMan::-webkit-scrollbar-thumb { /* Для браузеров разных */
+  background: #379683;
+  border-radius: 4px;
 }

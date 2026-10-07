@@ -6,47 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Server Monitor</title>
     <link rel="stylesheet" href="../styles/sensors.css" />
-    <!-- <script src="app.js" type="module" defer></script> -->
+    <script src="../scripts/setSensors.js" type="module" defer></script>
   </head>
   <body>
     <header>
-      <a href="index.html"><h1 class="title">Server Monitor</h1></a>
-      <h3 class="navbarElem">Войти</h1>
+      <a href="/index.html"><h1 class="title">Server Monitor</h1></a>
+      <h3 class="navbarElem">Войти</h3>
     </header>
     <div class="layout">
       <main>
         <div class="container">
-          <div class="stats">
-              <div class="stat">
-                <h3 class="cardStat">Датчики</h1>
-              </div>
-              <div class="stat">
-                <h3 class="cardStat">Нагрузка</h1>
-              </div>
-              <div class="stat">
-                <h3 class="cardStat">Память</h1>
-              </div>
-              <div class="stat">
-                <h3 class="cardStat">Хранилище</h1>
-              </div>
+          <div id="stat" class="stats">
           </div>
-        </div>
+      </div>
       </main>
       <aside>
         <div class="asideMan">
           <p>
-            Здесь вы увидите краткую сводку о том как чаще всего именуются датчики в unix системах.
+            Здесь вы увидите краткую сводку датичков вашего устройства. Значения чаще всего указываются в целочисленном виде (стандарт ядра Linux для hwmon): 
           </p>
+          <ol>
+            <li>Напряжение — в милливольтах (делить на 1000 для вольт)</li>
+            <li>Ток — в миллиамперах</li>
+            <li>Мощность — в микроваттах (делить на 1 000 000 для ватт)</li>
+            <li>Обороты вентилятора — сразу в RPM как есть</li>
+            <li>Температура -  в милли-градусах Цельсия (делить на 1000 для градусов Цельсия)</li>
+          </ol>
+          <p>
+            Наиболее часто встречаемые типы драйверов: 
+          </p>
+          <ul>
+            <li>k10temp — AMD CPU (Ryzen, EPYC, все начиная примерно с Family 15h)</li>
+            <li>zenpower — альтернативный драйвер для тех же AMD Zen-процессоров</li>
+            <li>coretemp — Intel CPU (Core/Xeon)</li>
+            <li>amdgpu — видеокарты AMD</li>
+            <li>nouveau — открытый драйвер для Nvidia</li>
+            <li>nvme — температура NVMe SSD</li>
+            <li>drivetemp — температура SATA/SAS дисков (HDD/SSD) через SMART</li>
+            <li>acpitz — обобщённая ACPI thermal zone</li>
+            <li>nct6775, it87, w83627ehf - Материнская плата / чипсет (Super I/O чипы — вентиляторы, напряжения, доп. температуры)</li>
+          </ul>
         </div>
       </aside>
     </div>
     <footer>
       <a href="mailto:artur251373@gmail.com"
-        ><h3 class="footerTitle">artur251373@gmail.com</h3></a
-      >
+        ><h3 class="footerTitle">artur251373@gmail.com</h3></a>
       <a href="https://github.com/SocratesMindset"
-        ><h3 class="footerTitle">SocratesMindset</h3></a
-      >
+        ><h3 class="footerTitle">SocratesMindset</h3></a>
     </footer>
   </body>
 </html>

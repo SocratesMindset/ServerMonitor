@@ -119,7 +119,7 @@ aside{
     border: 3px solid #379683;
     border-radius: 10px;
     display:flex;
-    width:250px;
+    width:400px;
     flex-direction: column;
     overflow-y: auto;
 

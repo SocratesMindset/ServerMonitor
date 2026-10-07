@@ -1,4 +1,4 @@
-import { backendAPI } from "./config.js";
+import { backendAPI } from "../config.js";
 
 function groupSensors(data) {
   const resp = data.reduce((acc, item) => {
